@@ -1,0 +1,242 @@
+/*I MAY NOT GET THE SUCCESS IMMEDIATELY BUT I WILL GET IT FOR SURE*/
+#include<bits/stdc++.h>
+#define opt std::ios_base::sync_with_stdio(false)
+#define I int
+#define li		int32_t
+#define lli		long long
+#define ulli unsigned long long
+
+#define pn			printf("\n")
+#define nl			cout<<'\n'
+#define sf(N)       scanf("%lld",&N)
+#define pf(N)       printf("%lld",N)
+
+#define rep(i,a,b)	for(i=a;i<b;i++)
+#define repr(i,a,b)	for(i=a;i>b;i--)
+#define elif		else if
+#define mset(a,b)	memset(a,b,sizeof(a))
+
+#define pb		push_back
+#define pob		pop_back
+#define itr		iterator
+#define sz()	size()
+#define szof    sizeof
+#define lb		lower_bound
+#define ub		upper_bound
+#define mp		make_pair
+#define vlli    vector<lli>
+#define plli	pair<lli,lli>
+#define vplli	vector<plli >
+#define F   	first
+#define S		second
+
+#define Inf     100000000000
+#define mod		1000000007
+using namespace std;
+
+vector<plli>V3[1001];
+lli N;
+lli dist[1001];
+bool Check[1001];
+vector<lli>V[1001];
+vector<lli>V1[1001];
+vector<lli>V2;
+bool visited[1001];
+bool visited1[1001];
+lli preorder[1001];
+lli postorder[1001];
+lli Time;
+I flag;
+lli Sum=0;
+
+bool sortbygreater(const pair<lli,lli> &a,const pair<lli,lli> &b)
+{
+    return (a.F>b.F);
+}
+
+void dfs1(lli x)
+{
+    visited1[x]=1;
+
+    lli i;
+    rep(i,0,V1[x].sz())
+    {
+        if(!visited1[V1[x][i]])
+        {
+            dfs1(V1[x][i]);
+        }
+    }
+
+    postorder[x]=++Time;
+}
+
+void dfs(lli x)
+{
+    visited[x]=1;
+    V2.pb(x);
+
+    lli i;
+    rep(i,0,V[x].sz())
+    {
+        Sum+=V3[x][i].S;
+        if(!visited[V[x][i]])
+        {
+            dfs(V[x][i]);
+        }
+    }
+}
+
+void BellMan_Ford()
+{
+    lli i,j,k;
+
+    rep(i,0,N+1)
+    {
+        dist[i]=Inf;
+    }
+
+    dist[0]=0;
+
+    rep(i,1,N+1)
+    {
+        lli cnt=0;
+        rep(j,0,N)
+        {
+            rep(k,0,V3[j].sz())
+            {
+                if(dist[V3[j][k].F]>dist[j]+V3[j][k].S)
+                {
+                    dist[V3[j][k].F]=dist[j]+V3[j][k].S;
+                    cnt++;
+
+                    if(i==N)
+                    {
+                        Check[V3[j][k].F]=1;
+                        flag=1;
+                    }
+                }
+            }
+        }
+
+        if(cnt)
+        {
+            continue;
+        }
+        else
+        {
+            break;
+        }
+    }
+}
+
+lli Power(lli a,lli b)
+{
+    lli result=1;
+
+    while(b)
+    {
+        if(b%2)
+        {
+            result=(result*a)%mod;
+        }
+
+        b=b>>1;
+        a=(a*a)%mod;
+    }
+
+ return result;
+ }
+
+int main()
+{
+    opt;
+
+    lli T,t=1;
+    cin>>T;
+
+    while(T--)
+    {
+        lli i,j;
+        cin>>N;
+
+        lli M;
+        cin>>M;
+
+        while(M--)
+        {
+            lli x,y,w;
+            cin>>x>>y>>w;
+
+            V3[x].pb(mp(y,w));
+            V[x].pb(y);
+            V1[y].pb(x);
+        }
+
+        BellMan_Ford();
+        rep(i,1,N+1)
+        {
+            if(!visited1[i])
+            {
+                dfs1(i);
+            }
+        }
+
+
+        cout<<"Case "<<t++<<": ";
+
+        vplli V4;
+        rep(i,0,N)
+        {
+            V4.pb(mp(postorder[i],i));
+        }
+
+        sort(V4.begin(),V4.end(),sortbygreater);
+
+        rep(i,0,V4.sz())
+        {
+            if(!visited[V4[i].S])
+            {
+                Sum=0;
+                dfs(V4[i].S);
+
+                if(Sum<0)
+                {
+                    flag=1;
+                    sort(V2.begin(),V2.end());
+
+                    rep(j,0,V2.sz())
+                    {
+                        cout<<V2[j]<<' ';
+                    }
+                    break;
+                }
+
+                V2.clear();
+            }
+        }
+
+        if(!flag)
+        {
+            cout<<"impossible";
+        }
+        nl;
+
+        rep(i,0,N+1)
+        {
+            V3[i].clear();
+            V1[i].clear();
+            V[i].clear();
+            visited[i]=0;
+            visited1[i]=0;
+            dist[i]=0;
+        }
+        V2.clear();
+        Time=0;
+        flag=0;
+    }
+
+
+
+
+ return 0;
+}

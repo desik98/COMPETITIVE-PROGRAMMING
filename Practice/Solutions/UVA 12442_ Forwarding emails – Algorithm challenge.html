@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/ -->
+<html lang="en" class="gr__saicheems_wordpress_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>UVA 12442: Forwarding emails – Algorithm challenge</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://saicheems.wordpress.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://s0.wp.com/wp-content/themes/pub/publish/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<meta name="google-site-verification" content="aSFbc3pbiMp8a9Am5wvTcbEFLdK-hvZdak4jF4scpUM">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="alternate" type="application/rss+xml" title="Algorithm challenge » Feed" href="https://saicheems.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Algorithm challenge » Comments Feed" href="https://saicheems.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Algorithm challenge » UVA 12442: Forwarding emails Comments Feed" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/feed/">
+	<script defer="" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/beacon.js.download"></script><script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1488818651h&ver=4.7.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="all-css-0-1" href="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource" type="text/css" media="all">
+<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource(1)"></script>
+<link rel="stylesheet" id="all-css-0-2" href="./UVA 12442_ Forwarding emails – Algorithm challenge_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://saicheems.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="UVA 11831: Sticker collector robot" href="https://saicheems.wordpress.com/2013/09/27/uva-11831-sticker-collector-robot/">
+<link rel="next" title="UVA 10189: Minesweeper" href="https://saicheems.wordpress.com/2013/10/15/uva-10189-minesweeper/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/">
+<link rel="shortlink" href="http://wp.me/p3JKq6-7d">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="UVA 12442: Forwarding emails">
+<meta property="og:url" content="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/">
+<meta property="og:description" content="UVA 12442 Forwarding emails Process This problem can be solved by using dfs. Keep traversing until you hit a visited node – that means you have a cycle. Store the value you return (the length…">
+<meta property="article:published_time" content="2013-10-03T02:42:08+00:00">
+<meta property="article:modified_time" content="2013-10-03T02:42:08+00:00">
+<meta property="og:site_name" content="Algorithm challenge">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://saicheems.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://saicheems.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://saicheems.wordpress.com/osd.xml" title="Algorithm challenge">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Algorithm challenge"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Solved UVA problems"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://saicheems.wordpress.com/feed/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="UVA 12442: Forwarding emails | Algorithm challenge on WordPress.com">
+<meta name="description" content="UVA 12442 Forwarding emails Process This problem can be solved by using dfs. Keep traversing until you hit a visited node - that means you have a cycle. Store the value you return (the length of the chain) in an array or vector so you don&#39;t calculate the same paths multiple times, otherwise you will…">
+		<script type="text/javascript" src="https://c.amazon-adsystem.com/aax2/amzn_ads.js"></script>
+		<script type="text/javascript">
+		 try { amznads.getAds("3033"); } catch(e) {}
+		</script>
+ 		<script type="text/javascript">
+		try {
+		var a9_p = amznads.getKeys(),
+			_ipw_custom = {
+				wordAds: '0',
+				adSafe: '0',
+				domain: 'saicheems.wordpress.com',
+				pageURL: 'https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/'
+			};
+			if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+ 	        } catch(e) {}
+		</script>
+		<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/publishertag.js.download"></script>
+ 		<script type="text/javascript" src="https://s.pubmine.com/head.js"></script><link rel="amphtml" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/amp/"><link rel="stylesheet" type="text/css" href="./UVA 12442_ Forwarding emails – Algorithm challenge_files/shCore.css"><link rel="stylesheet" type="text/css" href="./UVA 12442_ Forwarding emails – Algorithm challenge_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/ga.js.download"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./UVA 12442_ Forwarding emails – Algorithm challenge_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./UVA 12442_ Forwarding emails – Algorithm challenge_files/services.css"></head>
+
+<div class="gr-top-z-index gr-top-zero" tabindex="-1"><div class="_970ef1-hoverMenu _970ef1-referral" style="transform:translate(NaNpx, NaNpx);" data-grammarly-reactid=".2"><div class="_970ef1-panel" data-grammarly-reactid=".2.0"><div class="_970ef1-tooltip _970ef1-tooltip_hidden undefined" data-grammarly-reactid=".2.0.0"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".2.0.1"><div class="_970ef1-btn _970ef1-btn_disable" tabindex="-1" data-grammarly-reactid=".2.0.1.0"></div></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".2.0.2"><div class="_970ef1-referralArea" tabindex="-1" data-grammarly-reactid=".2.0.2.0"><div class="_970ef1-btn _970ef1-btn_referral" data-grammarly-reactid=".2.0.2.0.0"></div><span class="_970ef1-referralText" data-grammarly-reactid=".2.0.2.0.1">Invite Friends</span></div></div><div class="_970ef1-line" data-grammarly-reactid=".2.0.3"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".2.0.5"><div class="_970ef1-btn _970ef1-btn_grammarly" data-action="editor" tabindex="-1" data-grammarly-reactid=".2.0.5.0"></div></div></div></div></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"><div class="_970ef1-hoverMenu _970ef1-referral" style="transform:translate(NaNpx, NaNpx);" data-grammarly-reactid=".1"><div class="_970ef1-panel" data-grammarly-reactid=".1.0"><div class="_970ef1-tooltip _970ef1-tooltip_hidden undefined" data-grammarly-reactid=".1.0.0"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".1.0.1"><div class="_970ef1-btn _970ef1-btn_disable" tabindex="-1" data-grammarly-reactid=".1.0.1.0"></div></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".1.0.2"><div class="_970ef1-referralArea" tabindex="-1" data-grammarly-reactid=".1.0.2.0"><div class="_970ef1-btn _970ef1-btn_referral" data-grammarly-reactid=".1.0.2.0.0"></div><span class="_970ef1-referralText" data-grammarly-reactid=".1.0.2.0.1">Invite Friends</span></div></div><div class="_970ef1-line" data-grammarly-reactid=".1.0.3"></div><div class="_970ef1-buttonArea" data-grammarly-reactid=".1.0.5"><div class="_970ef1-btn _970ef1-btn_grammarly" data-action="editor" tabindex="-1" data-grammarly-reactid=".1.0.5.0"></div></div></div></div></div><body class="post-template-default single single-post postid-447 single-format-standard mp6 customizer-styles-applied highlander-enabled highlander-light" data-gr-c-s-loaded="true">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+					<a class="site-logo" href="https://saicheems.wordpress.com/" title="Algorithm challenge" rel="home">
+				<img class="no-grav" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource(2)" height="100" width="100" alt="Algorithm challenge">
+			</a>
+				<hgroup>
+			<h1 class="site-title"><a href="https://saicheems.wordpress.com/" title="Algorithm challenge" rel="home">Algorithm challenge</a></h1>
+			<h2 class="site-description">Solved UVA problems</h2>
+		</hgroup>
+
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text">Menu</h1>
+			<div class="assistive-text skip-link"><a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#content" title="Skip to content">Skip to content</a></div>
+
+			<div class="menu"><ul>
+<li><a href="https://saicheems.wordpress.com/">Home</a></li></ul></div>
+		</nav><!-- .site-navigation .main-navigation -->
+
+			</header><!-- #masthead .site-header -->
+
+	<div id="main" class="site-main">
+
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+
+			
+				
+<article id="post-447" class="post-447 post type-post status-publish format-standard hentry category-uncategorized tag-17497895 tag-algorithm tag-forwarding-emails tag-input tag-online-judge tag-output tag-uva">
+	<header class="entry-header">
+		<h1 class="entry-title">UVA 12442: Forwarding&nbsp;emails</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>UVA 12442<br>
+Forwarding emails</p>
+<p>Process<br>
+This problem can be solved by using dfs. Keep traversing until you hit a visited node – that means you have a cycle. Store the value you return (the length of the chain) in an array or vector so you don’t calculate the same paths multiple times, otherwise you will get TLE.</p>
+<div><div id="highlighter_890968" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp comments">/*</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp comments">* Sai Cheemalapati</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp comments">* UVA 12442: Forwarding emails</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp comments">*</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp comments">*/</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="cpp preprocessor">#include&lt;cstdio&gt;</code></div><div class="line number8 index7 alt1"><code class="cpp preprocessor">#include&lt;vector&gt;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="cpp keyword bold">using</code> <code class="cpp keyword bold">namespace</code> <code class="cpp plain">std;</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">T, N, a, b;</code></div><div class="line number13 index12 alt2"><code class="cpp plain">vector&lt;</code><code class="cpp color1 bold">int</code><code class="cpp plain">&gt; graph, sum;</code></div><div class="line number14 index13 alt1"><code class="cpp plain">vector&lt;</code><code class="cpp color1 bold">bool</code><code class="cpp plain">&gt; vis;</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">dfs(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">u) {</code></div><div class="line number17 index16 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">vis[u] = </code><code class="cpp keyword bold">true</code><code class="cpp plain">;</code></div><div class="line number18 index17 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">tot = 0;</code></div><div class="line number19 index18 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code><code class="cpp plain">(graph[u] != -1 &amp;&amp; !vis[graph[u]])</code></div><div class="line number20 index19 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">tot += 1 + dfs(graph[u]);</code></div><div class="line number21 index20 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">vis[u] = </code><code class="cpp keyword bold">false</code><code class="cpp plain">;</code></div><div class="line number22 index21 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code> <code class="cpp plain">sum[u] = tot;</code></div><div class="line number23 index22 alt2"><code class="cpp plain">}</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="cpp color1 bold">int</code> <code class="cpp plain">main() {</code></div><div class="line number26 index25 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">scanf</code><code class="cpp plain">(</code><code class="cpp string">"%d"</code><code class="cpp plain">, &amp;T);</code></div><div class="line number27 index26 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code><code class="cpp plain">(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">t = 1; t &lt;= T; t++) {</code></div><div class="line number28 index27 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">scanf</code><code class="cpp plain">(</code><code class="cpp string">"%d"</code><code class="cpp plain">, &amp;N);</code></div><div class="line number29 index28 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">graph.assign(N, -1);</code></div><div class="line number30 index29 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">sum.assign(N, -1);</code></div><div class="line number31 index30 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">vis.assign(N, </code><code class="cpp keyword bold">false</code><code class="cpp plain">);</code></div><div class="line number32 index31 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code><code class="cpp plain">(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">i = 0; i &lt; N; i++) {</code></div><div class="line number33 index32 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">scanf</code><code class="cpp plain">(</code><code class="cpp string">"%d %d"</code><code class="cpp plain">, &amp;a, &amp;b);</code></div><div class="line number34 index33 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">graph[a - 1] = b - 1;</code></div><div class="line number35 index34 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number36 index35 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">ans = 0, best_len = 0;</code></div><div class="line number37 index36 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code><code class="cpp plain">(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">i = 0; i &lt; N; i++) {</code></div><div class="line number38 index37 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code><code class="cpp plain">(sum[i] == -1) dfs(i);</code></div><div class="line number39 index38 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">if</code><code class="cpp plain">(sum[i] &gt; best_len) {</code></div><div class="line number40 index39 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">best_len = sum[i];</code></div><div class="line number41 index40 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">ans = i;</code></div><div class="line number42 index41 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number43 index42 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number44 index43 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code><code class="cpp plain">(</code><code class="cpp string">"Case %d: %d\n"</code><code class="cpp plain">, t, ans + 1);</code></div><div class="line number45 index44 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number46 index45 alt1"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<div><div id="highlighter_427337" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><caption>input</caption><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">7</code></div><div class="line number2 index1 alt1"><code class="plain plain">3</code></div><div class="line number3 index2 alt2"><code class="plain plain">1 2</code></div><div class="line number4 index3 alt1"><code class="plain plain">2 3</code></div><div class="line number5 index4 alt2"><code class="plain plain">3 1</code></div><div class="line number6 index5 alt1"><code class="plain plain">4</code></div><div class="line number7 index6 alt2"><code class="plain plain">1 2</code></div><div class="line number8 index7 alt1"><code class="plain plain">2 1</code></div><div class="line number9 index8 alt2"><code class="plain plain">4 3</code></div><div class="line number10 index9 alt1"><code class="plain plain">3 2</code></div><div class="line number11 index10 alt2"><code class="plain plain">5</code></div><div class="line number12 index11 alt1"><code class="plain plain">1 2</code></div><div class="line number13 index12 alt2"><code class="plain plain">2 1</code></div><div class="line number14 index13 alt1"><code class="plain plain">5 3</code></div><div class="line number15 index14 alt2"><code class="plain plain">3 4</code></div><div class="line number16 index15 alt1"><code class="plain plain">4 5</code></div><div class="line number17 index16 alt2"><code class="plain plain">2</code></div><div class="line number18 index17 alt1"><code class="plain plain">1 2</code></div><div class="line number19 index18 alt2"><code class="plain plain">2 1</code></div><div class="line number20 index19 alt1"><code class="plain plain">3</code></div><div class="line number21 index20 alt2"><code class="plain plain">1 2</code></div><div class="line number22 index21 alt1"><code class="plain plain">2 3</code></div><div class="line number23 index22 alt2"><code class="plain plain">3 1</code></div><div class="line number24 index23 alt1"><code class="plain plain">4</code></div><div class="line number25 index24 alt2"><code class="plain plain">4 2</code></div><div class="line number26 index25 alt1"><code class="plain plain">2 1</code></div><div class="line number27 index26 alt2"><code class="plain plain">4 3</code></div><div class="line number28 index27 alt1"><code class="plain plain">3 2</code></div><div class="line number29 index28 alt2"><code class="plain plain">10</code></div><div class="line number30 index29 alt1"><code class="plain plain">1 2</code></div><div class="line number31 index30 alt2"><code class="plain plain">2 3</code></div><div class="line number32 index31 alt1"><code class="plain plain">3 4</code></div><div class="line number33 index32 alt2"><code class="plain plain">4 5</code></div><div class="line number34 index33 alt1"><code class="plain plain">5 6</code></div><div class="line number35 index34 alt2"><code class="plain plain">6 7</code></div><div class="line number36 index35 alt1"><code class="plain plain">7 8</code></div><div class="line number37 index36 alt2"><code class="plain plain">8 9</code></div><div class="line number38 index37 alt1"><code class="plain plain">9 10</code></div><div class="line number39 index38 alt2"><code class="plain plain">10 1</code></div></div></td></tr></tbody></table></div></div>
+<div><div id="highlighter_239197" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><caption>output</caption><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">Case 1: 1</code></div><div class="line number2 index1 alt1"><code class="plain plain">Case 2: 4</code></div><div class="line number3 index2 alt2"><code class="plain plain">Case 3: 3</code></div><div class="line number4 index3 alt1"><code class="plain plain">Case 4: 1</code></div><div class="line number5 index4 alt2"><code class="plain plain">Case 5: 1</code></div><div class="line number6 index5 alt1"><code class="plain plain">Case 6: 4</code></div><div class="line number7 index6 alt2"><code class="plain plain">Case 7: 1</code></div></div></td></tr></tbody></table></div></div>
+		<div class="wpcnt">
+			<div class="wpa wpmrec" style="display: inline-block !important;">
+				<span class="wpa-about">Advertisements</span>
+				        <div id="crt-17659908" style="width: 300px; height: 250px; display: block !important;"><iframe src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/afr.html" id="crt-17659908_cto_iframe" frameborder="0" marginwidth="0px" marginheight="0px" width="100%" height="100%" scrolling="no"></iframe></div>
+        <script type="text/javascript">
+        var o = document.getElementById('crt-17659908');
+        if ("undefined"!=typeof Criteo) {
+            var p = o.parentNode;
+            p.style.setProperty('display', 'inline-block', 'important');
+            o.style.setProperty('display', 'block', 'important');
+            Criteo.DisplayAcceptableAdIfAdblocked({zoneid:388248,containerid:"crt-17659908",collapseContainerIfNotAdblocked:true,"callifnotadblocked": function () {var o = document.getElementById('crt-17659908'); o.style.setProperty('display','none','important');o.style.setProperty('visbility','hidden','important'); }
+        });
+        } else {
+            o.style.setProperty('display', 'none', 'important');
+            o.style.setProperty('visibility', 'hidden', 'important');
+        }
+        </script>
+				<div class="u">
+								<script type="text/javascript">
+				(function(g){if("undefined"!=typeof g.__ATA){g.__ATA.initAd({sectionId:26942, width:300, height:250});}})(window);
+			</script>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-447" class="share-twitter sd-button share-icon" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-447" class="share-facebook sd-button share-icon" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/?share=facebook&amp;nb=1" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-447" class="share-google-plus-1 sd-button share-icon" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-55232210-447-58cb48d6eb2fc" data-src="//widgets.wp.com/likes/#blog_id=55232210&amp;post_id=447&amp;origin=saicheems.wordpress.com&amp;obj_id=55232210-447-58cb48d6eb2fc" data-name="like-post-frame-55232210-447-58cb48d6eb2fc"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-55232210-447-58cb48d6eb2fc" height="55px" width="100%" frameborder="0" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="310" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://saicheems.wordpress.com/2013/08/15/uva-872-ordering/" title="UVA 872: Ordering
+
+Process I solved this problem using recursive backtracing. I used a vector to hold the elements, a vector of vectors to hold the adjacency list, and a map to keep track of visited nodes. I used a modified dfs method that recursed on each element if it didn&#39;t break the…" rel="nofollow" data-origin="447" data-position="0">UVA 872: Ordering</a></span><span class="jp-relatedposts-post-context">In "872"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="262" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://saicheems.wordpress.com/2013/08/03/uva-539-the-settlers-of-catan/" title="UVA 539: The settlers of Catan
+
+Process This problem can be solved by multiple depth first searches (since there can be disconnected sets). The trick is to keep track of visited edges instead of nodes, and mark each edge unvisited after making the recursive call. This is to make sure we traverse all possible directional paths." rel="nofollow" data-origin="447" data-position="1">UVA 539: The settlers of Catan</a></span><span class="jp-relatedposts-post-context">In "539"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="226" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://saicheems.wordpress.com/2013/07/24/uva-722-lakes/" title="UVA 722: Lakes
+
+Process This problem is simple flood fill. Input is a little tricky - I used strcpy to take in the graph. Just start on the cell given in the problem description and sum the number of connected water tiles in the four possible directions." rel="nofollow" data-origin="447" data-position="2">UVA 722: Lakes</a></span><span class="jp-relatedposts-post-context">In "722"</span></p></div></div></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		Posted on <a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/" title="10:42 pm" rel="bookmark"><time class="entry-date" datetime="2013-10-02T22:42:08+00:00" pubdate="">October 2, 2013</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://saicheems.wordpress.com/author/saicheems/" title="View all posts by saicheems" rel="author">saicheems</a></span></span>.		This entry was tagged <a href="https://saicheems.wordpress.com/tag/12442/" rel="tag">12442</a>, <a href="https://saicheems.wordpress.com/tag/algorithm/" rel="tag">algorithm</a>, <a href="https://saicheems.wordpress.com/tag/forwarding-emails/" rel="tag">forwarding emails</a>, <a href="https://saicheems.wordpress.com/tag/input/" rel="tag">input</a>, <a href="https://saicheems.wordpress.com/tag/online-judge/" rel="tag">online judge</a>, <a href="https://saicheems.wordpress.com/tag/output/" rel="tag">output</a>, <a href="https://saicheems.wordpress.com/tag/uva/" rel="tag">uva</a>. Bookmark the <a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/" title="Permalink to UVA 12442: Forwarding emails" rel="bookmark">permalink</a>.
+			</footer><!-- .entry-meta -->
+</article><!-- #post-447 -->
+
+					<nav role="navigation" id="nav-below" class="site-navigation post-navigation">
+		<h1 class="assistive-text">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="https://saicheems.wordpress.com/2013/09/27/uva-11831-sticker-collector-robot/" rel="prev"><span class="meta-nav">←</span> UVA 11831: Sticker collector&nbsp;robot</a></div>		<div class="nav-next"><a href="https://saicheems.wordpress.com/2013/10/15/uva-10189-minesweeper/" rel="next">UVA 10189: Minesweeper <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+				
+	<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			One thought on “<span>UVA 12442: Forwarding&nbsp;emails</span>”		</h2>
+
+		
+		<ol class="commentlist">
+			
+	<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-376">
+		<article id="comment-376" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/5d78566c23a2bbcbbd365ee84211b04a" class="avatar avatar-40 grav-hashed grav-hijack" height="40" width="40" id="grav-5d78566c23a2bbcbbd365ee84211b04a-0">					<cite class="fn">IslamSalah</cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#comment-376"><time pubdate="" datetime="2015-08-26T11:54:42+00:00">
+					August 26, 2015 at 11:54 am					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>– no need to clear the graph vector each TC<br>
+– no need to check if (graph[u] != -1) in the dfs function as it’s stated in the problem description every node will have an exactly one neighbour.</p>
+</div>
+
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/?replytocom=376#respond" onclick="return addComment.moveForm( &quot;comment-376&quot;, &quot;376&quot;, &quot;respond&quot;, &quot;447&quot; )" aria-label="Reply to IslamSalah">Reply</a>			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+		</ol><!-- .commentlist -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://saicheems.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="ceddc7c48c"><input type="hidden" name="_wp_http_referer" value="/2013/10/02/uva-12442-forwarding-emails/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 300; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 21px; width: 502.778px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 40px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea><grammarly-btn><div style="visibility: hidden; z-index: 2;" class="_e725ae-textarea_btn _e725ae-not_focused" data-grammarly-reactid=".0"><div class="_e725ae-transform_wrap" data-grammarly-reactid=".0.0"><div title="Protected by Grammarly" class="_e725ae-status" data-grammarly-reactid=".0.0.0">&nbsp;</div></div></div></grammarly-btn></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource(7).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/ad516503a11cd5ca435acc9bb6523536" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="447" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ca1efde507"></p>
+<input type="hidden" name="genseq" value="1489717462">
+<p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1489717457675"></form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div>
+</div><!-- #comments .comments-area -->
+
+			
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+						<aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" action="https://saicheems.wordpress.com/" role="search">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" value="" id="s" placeholder="Search …">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main .site-main -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com.</a> 		</div><!-- .site-info -->
+	</footer><!-- #colophon .site-footer -->
+</div><!-- #page .hfeed .site -->
+
+<!--  -->
+<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/gprofiles.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/wpgroho.js.download"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-5d78566c23a2bbcbbd365ee84211b04a">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/saicheems.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/saicheems.wordpress.com\/wp-login.php?action=logout&_wpnonce=c7b266870d","homeURL":"https:\/\/saicheems.wordpress.com\/","postID":"447","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource(3)"></script>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/saicheems.wordpress.com\/2013\/10\/02\/uva-12442-forwarding-emails\/":447};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/form.js.download"></script>
+<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource(4)"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414h&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+// Infinite scroll support
+jQuery( function( $ ) {
+	$( document.body ).on( 'post-load', function() {
+		SyntaxHighlighter.highlight();
+	} );
+} );
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"55232210","siteName":"Algorithm challenge","siteURL":"http:\/\/saicheems.wordpress.com","icon":"<img alt='' src='https:\/\/s1.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/publish","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/saicheems.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F","themeURL":"https:\/\/wordpress.com\/theme\/publish\/","xhrURL":"https:\/\/saicheems.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"89e7e9a0ef","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"f5b4f078df\" \/>","referer":"https:\/\/saicheems.wordpress.com\/2013\/10\/02\/uva-12442-forwarding-emails\/","canFollow":"1","statusMessage":"","customizeLink":"https:\/\/saicheems.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F","postID":"447","shortlink":"http:\/\/wp.me\/p3JKq6-7d","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/saicheems.wordpress.com\/447","statsLink":"https:\/\/wordpress.com\/stats\/post\/447\/saicheems.wordpress.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Publish","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in the Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/saicheems.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F\">Log in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/saved_resource(5)"></script><div id="actionbar" class="actnbr-pub-publish actnbr-has-follow actnbr-hidden"><ul><li class="actnbr-btn actnbr-hidden"> 			    	<a class="actnbr-action actnbr-actn-follow" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a> 			    	<div class="actnbr-popover tip tip-top-left actnbr-notice"> 			    		<div class="tip-arrow"></div> 			    		<div class="tip-inner actnbr-follow-bubble"></div> 			    	</div> 			    </li><li class="actnbr-ellipsis actnbr-hidden"> 			  <svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 			  <div class="actnbr-popover tip tip-top-left actnbr-more"> 			  	<div class="tip-arrow"></div> 			  	<div class="tip-inner"> 				  <ul> 				    <li class="actnbr-sitename actnbr-hidden"><a href="http://saicheems.wordpress.com/"><img alt="" src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/wpcom-gray-white.png" class="avatar avatar-50" height="50" width="50"> Algorithm challenge</a></li> 				   	<li class="actnbr-folded-customize actnbr-hidden"><a href="https://saicheems.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Customize<span></span></span></a></li> 				    <li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a></li> 					<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Sign up</a></li> 				    <li class="actnbr-login actnbr-hidden"><a href="https://saicheems.wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Fsaicheems.wordpress.com%2F2013%2F10%2F02%2Fuva-12442-forwarding-emails%2F">Log in</a></li> 				     				    <li class="actnbr-shortlink actnbr-hidden"><a href="http://wp.me/p3JKq6-7d">Copy shortlink</a></li> 				    <li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Report this content</a></li> 				     				     				    <li class="actnbr-subs actnbr-hidden"><a href="https://subscribe.wordpress.com/">Manage subscriptions</a></li> 				    <li class="actnbr-fold actnbr-hidden"><a href="https://saicheems.wordpress.com/2013/10/02/uva-12442-forwarding-emails/">Collapse this bar</a></li> 			      </ul> 			    </div> 		      </div> 		    </li> 	      </ul></div>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script>
+			var _comscore = _comscore || [];
+			_comscore.push({
+				c1: "2",
+				c2: "7518284"
+			});
+			(function() {
+				var s = document.createElement("script"),
+					el = document.getElementsByTagName("script")[0];
+				s.defer = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			})();
+		</script>
+		<noscript>
+			&lt;p class="robots-nocontent"&gt;&lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=7518284&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cv=2.0&amp;cj=1" alt="" style="display:none;" width="1" height="1" /&gt;&lt;/p&gt;
+		</noscript><script src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/w.js.download" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'55232210','blog_tz':'-4','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'55232210','v':'wpcom','tz':'-4','user_id':'0','post':'447','subd':'saicheems'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMlIueS10bVlkVk1DYlZ6WVpLLnFBXzNoUGIzdXh+VXNmM3xVdGd4Y3ZSJksmaFRQTmNMbW00WXQyV0d4YkZGVWdsV01KQ2RqM1t3Lis9XXNmSHp8Vzh8ZVtRM2pOVDdILC9senxNWHBndVhUOGRJSFE9K3BOQWIvUFRmQzdBX3RTSFJfbWVmYm9ERUYlX2pFY1M2bGZGaVI0ciZILm4wfFE5JUlYOHU4SHAzW3I3VUhrVGhvLEdmPXVXREpHLz9FMTgzdUV3MFNxU1ZMUmoz'}]);
+_stq.push([ 'clickTrackerInit', '55232210', '447' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<img src="./UVA 12442_ Forwarding emails – Algorithm challenge_files/g.gif" alt=":)" id="wpstats"></body><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"></div><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

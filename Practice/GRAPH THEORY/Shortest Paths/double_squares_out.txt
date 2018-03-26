@@ -1,0 +1,8 @@
+Case 1: 19
+Case 2: Impossible
+Case 3: 44
+Case 4: 51
+Case 5: 152
+Case 6: 47
+Case 7: 36
+Case 8: 237

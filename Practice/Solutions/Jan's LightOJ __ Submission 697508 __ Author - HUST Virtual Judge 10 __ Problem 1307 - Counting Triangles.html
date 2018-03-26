@@ -1,0 +1,418 @@
+
+<!-- saved from url=(0056)http://www.lightoj.com/volume_showcode.php?sub_id=697508 -->
+<html class="gr__lightoj_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Jan's LightOJ :: Submission 697508 :: Author - HUST Virtual Judge 10 :: Problem 1307 - Counting Triangles</title>
+		
+		<link rel="stylesheet" type="text/css" href="./Jan&#39;s LightOJ __ Submission 697508 __ Author - HUST Virtual Judge 10 __ Problem 1307 - Counting Triangles_files/style.css">
+	</head>
+
+	<body data-gr-c-s-loaded="true">
+<style>
+div.tempMessage {
+  float: left;
+  font-size: 30;
+  margin-top: 10px;
+  margin-left: 300px;
+  position: absolute;
+  border: 2px solid white;
+  background: yellow;
+  border-radius: 5px;
+  padding: 2px;
+}
+div.tempMessage a {
+  text-decoration: underline;
+  color: red;
+}
+</style>
+<div class="topDiv">
+			<img src="./Jan&#39;s LightOJ __ Submission 697508 __ Author - HUST Virtual Judge 10 __ Problem 1307 - Counting Triangles_files/main.png" class="topImage" style="float: left;">
+                <!--<div class="tempMessage"><a href="http://lightoj.com/lightojv2/contest/215/problems" target=_blank>ACM ICPC Dhaka Regionals Online Preliminary Contest is scheduled here.</a></div>!-->
+			<div class="topMenuMessage" style="display: block; float: right; padding: 50 5 0 0;">
+				Server Time:
+				<a class="top_link" target="_blank" href="http://www.timeanddate.com/worldclock/fixedtime.html?iso=20170307T125732">
+					Tue Mar 7, 2017 6:57 pm				</a>
+			</div>
+		</div>
+		<div class="topMenu" align="center">
+			<table width="100%">
+				<tbody><tr>
+					<td width="10%">
+						<div class="topMenuMessage">
+							&nbsp;<a class="top_link" href="http://www.lightoj.com/index.php">
+								Home
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/volume_problemset.php">
+								Volume
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/contest_index.php">
+								Contest
+							</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/article_showcategory.php">Training</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/forum_index.php">Community</a>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="topMenuMessage">
+							<a class="top_link" href="http://www.lightoj.com/credits_index.php">Credits</a>
+						</div>
+					</td>
+					<td width="60%" align="right">
+						<div class="topMenuMessage">
+							Welcome
+								<a class="top_link" href="http://www.lightoj.com/index_edituser.php">
+									Mandava Desik								</a>
+							(<a class="top_link" href="http://www.lightoj.com/login_logout.php">
+								logout
+							</a>)&nbsp;
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div id="wrapper">
+			<div id="content" align="center">
+
+				<h1>Showing Code of Submission Id 697508</h1>
+
+				<table id="mytable3" cellspacing="0">
+					<tbody><tr>
+						<th class="top">Id</th>
+						<th class="top" width="60">Submission Time</th>
+						<th class="top">User</th>
+						<th class="top">Problem</th>
+						<th class="top">Source</th>
+						<th class="top">CPU</th>
+						<th class="top">Memory</th>
+						<th class="top">Verdict</th>
+					</tr>
+					<tr>
+						<th class="one">697508</th>
+						<td class="one">2016-03-30 04:46:16</td>
+						<td class="one">
+							<a class="user_link_one" href="http://www.lightoj.com/volume_userstat.php?user_id=18015">
+								HUST Virtual Judge 10							</a>
+						</td>
+						<td class="one">
+							<a class="user_link_one" href="http://www.lightoj.com/volume_showproblem.php?problem=1307">
+								1307 - Counting Triangles							</a>
+						</td>
+						<td class="one">
+							C++						</td>
+						<td class="one">
+							0.072						</td>
+						<td class="one">
+							1688						</td>
+						<td class="one">
+							<div style="color: #0B610B;">
+								Accepted							</div>
+						</td>
+					</tr>
+				</tbody></table>
+				<br><br>
+				<table id="mytable3" cellspacing="0">
+					<tbody><tr><th class="top">Code</th>
+					</tr><tr>
+						<td class="showCode">
+							<script>
+			function toggle277715323() {
+				var x = '277715323a';
+				var y = '277715323b';
+				if( document.getElementById(x).style.display == 'block' ) {
+					document.getElementById(x).style.display = 'none';
+					document.getElementById(y).style.display = 'block';
+				}
+				else {
+					document.getElementById(x).style.display = 'block';
+					document.getElementById(y).style.display = 'none';
+				}
+			}
+			function openInCompiler277715323( language ) {
+				var getcode = document.getElementById('277715323c').value;
+
+				var form = document.createElement("form");
+				form.setAttribute("method", "post");
+				form.setAttribute("action", "compiler_volume.php?problem=1307");
+
+				var hiddenField = document.createElement("input");
+				hiddenField.setAttribute("type", "hidden");
+				hiddenField.setAttribute("name", "code");
+				hiddenField.setAttribute("value", getcode);
+
+				form.appendChild(hiddenField);
+
+
+				if( language == "cpp" ) language = "C++";
+				else if( language == "c" ) language = "C";
+				else if( language == "csharp" ) language = "C#";
+				else if( language == "java" ) language = "JAVA";
+				else if( language == "pascal" ) language = "PASCAL";
+				else if( language == "python" ) language = "PYTHON";
+
+				var hiddenField1 = document.createElement("input");
+				hiddenField1.setAttribute("type", "hidden");
+				hiddenField1.setAttribute("name", "language");
+				hiddenField1.setAttribute("value", language);
+
+				form.appendChild(hiddenField1);
+
+				document.body.appendChild(form);
+				form.setAttribute("target", "_blank");
+				form.submit();
+			}
+			</script><p></p><div style=" font: 10pt &#39;Trebuchet MS&#39;, Verdana; border: 1px solid #C1DAD7; border-radius: 5; padding: 2;">
+				Code:
+				<a class="user_link" style="cursor: pointer; color: #c75f3e;" onclick="toggle277715323(); ">(Toggle Highlighting)
+				</a>
+				<a class="user_link" style="cursor: pointer; color: #c75f3e;" onclick="openInCompiler277715323(&#39;cpp&#39;); ">(Open in Compiler)
+				</a>
+			</div><div id="277715323a" style="display: none;"><textarea id="277715323c" rows="53" readonly="yes" style="width: 100%; ;">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int FindNumberOfTriangles(vector&lt;int&gt; sides)
+{
+  sort(sides.begin(), sides.end());
+  int result = 0;
+ 
+  for(int i=sides.size()-1;i&gt;=0;--i) {
+    int start = 0;
+    int end = i - 1;
+ 
+    while(start &lt; end) {
+      
+      if (sides[start] + sides[end] &lt;= sides[i]) {
+        ++start;
+      } else {
+       
+        result += end - start;
+        --end;
+      }
+    }
+  }
+ 
+  return result;
+}
+
+int main()
+{
+    vector&lt;int&gt;a;
+    int k=1,tcs,count=0;
+    scanf("%d",&amp;tcs);
+    int j=1;
+    while(tcs--)
+    {
+        int x;
+        scanf("%d",&amp;x);
+        for(int i=0;i&lt;x;i++)
+        {
+            int n;
+            scanf("%d",&amp;n);
+            a.push_back(n);
+        }
+
+        sort(a.begin(),a.end());
+       
+	int q=FindNumberOfTriangles(a);
+	printf("Case %d: %d\n",k,q);
+    a.clear();
+    k++;
+    }
+	
+	return 0;
+}</textarea></div><div id="277715323b" style="display: block;"><div class="cpp" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339933;">#include &lt;bits/stdc++.h&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">using</span> <span style="color: #000000; font-weight: bold;">namespace</span> std<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000ff;">int</span> FindNumberOfTriangles<span style="color: #009900;">(</span>vector<span style="color: #000080;">&lt;</span><span style="color: #0000ff;">int</span><span style="color: #000080;">&gt;</span> sides<span style="color: #009900;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">{</span></div></li>
+<li style="font-weight: bold; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; sort<span style="color: #009900;">(</span>sides.<span style="color: #007788;">begin</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span>, sides.<span style="color: #007788;">end</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #0000ff;">int</span> result <span style="color: #000080;">=</span> <span style="color: #686868;">0</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #009900;">for</span><span style="color: #009900;">(</span><span style="color: #0000ff;">int</span> i<span style="color: #000080;">=</span>sides.<span style="color: #007788;">size</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #000040;">-</span><span style="color: #686868;">1</span><span style="color: #008080;">;</span>i<span style="color: #000080;">&gt;=</span><span style="color: #686868;">0</span><span style="color: #008080;">;</span><span style="color: #000040;">--</span>i<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #0000ff;">int</span> start <span style="color: #000080;">=</span> <span style="color: #686868;">0</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #0000ff;">int</span> end <span style="color: #000080;">=</span> i <span style="color: #000040;">-</span> <span style="color: #686868;">1</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">while</span><span style="color: #009900;">(</span>start <span style="color: #000080;">&lt;</span> end<span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; <span style="color: #009900;">if</span> <span style="color: #009900;">(</span>sides<span style="color: #009900;">[</span>start<span style="color: #009900;">]</span> <span style="color: #000040;">+</span> sides<span style="color: #009900;">[</span>end<span style="color: #009900;">]</span> <span style="color: #000080;">&lt;=</span> sides<span style="color: #009900;">[</span>i<span style="color: #009900;">]</span><span style="color: #009900;">)</span> <span style="color: #009900;">{</span></div></li>
+<li style="font-weight: bold; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000040;">++</span>start<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; <span style="color: #009900;">}</span> <span style="color: #009900;">else</span> <span style="color: #009900;">{</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; result <span style="color: #000040;">+</span><span style="color: #000080;">=</span> end <span style="color: #000040;">-</span> start<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000040;">--</span>end<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; <span style="color: #009900;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #009900;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #009900;">return</span> result<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000ff;">int</span> main<span style="color: #009900;">(</span><span style="color: #009900;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">{</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; vector<span style="color: #000080;">&lt;</span><span style="color: #0000ff;">int</span><span style="color: #000080;">&gt;</span>a<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #0000ff;">int</span> k<span style="color: #000080;">=</span><span style="color: #686868;">1</span>,tcs,count<span style="color: #000080;">=</span><span style="color: #686868;">0</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #d00000;">"%d"</span>,<span style="color: #000040;">&amp;</span>tcs<span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #0000ff;">int</span> j<span style="color: #000080;">=</span><span style="color: #686868;">1</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">while</span><span style="color: #009900;">(</span>tcs<span style="color: #000040;">--</span><span style="color: #009900;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">{</span></div></li>
+<li style="font-weight: bold; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">int</span> x<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #d00000;">"%d"</span>,<span style="color: #000040;">&amp;</span>x<span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">for</span><span style="color: #009900;">(</span><span style="color: #0000ff;">int</span> i<span style="color: #000080;">=</span><span style="color: #686868;">0</span><span style="color: #008080;">;</span>i<span style="color: #000080;">&lt;</span>x<span style="color: #008080;">;</span>i<span style="color: #000040;">++</span><span style="color: #009900;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">{</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">int</span> n<span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000066;">scanf</span><span style="color: #009900;">(</span><span style="color: #d00000;">"%d"</span>,<span style="color: #000040;">&amp;</span>n<span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a.<span style="color: #007788;">push_back</span><span style="color: #009900;">(</span>n<span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; sort<span style="color: #009900;">(</span>a.<span style="color: #007788;">begin</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span>,a.<span style="color: #007788;">end</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #0000ff;">int</span> q<span style="color: #000080;">=</span>FindNumberOfTriangles<span style="color: #009900;">(</span>a<span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #000066;">printf</span><span style="color: #009900;">(</span><span style="color: #d00000;">"Case %d: %d<span style="color: #d00000; font-weight: bold;">\n</span>"</span>,k,q<span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; a.<span style="color: #007788;">clear</span><span style="color: #009900;">(</span><span style="color: #009900;">)</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; k<span style="color: #000040;">++</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; </div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">return</span> <span style="color: #686868;">0</span><span style="color: #008080;">;</span></div></li>
+<li style="font-weight: normal; vertical-align:top; background: #F5FAFA "><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">}</span></div></li>
+</ol></div></div><p></p>						</td>
+					</tr>
+				</tbody></table>
+				<br>
+
+			</div>
+		</div>
+<div id="navigation">
+	<div class="navcontainer">
+		<ul class="navlist">
+			<li class="menutitle">Volume</li>
+
+			<li>
+				<a href="http://www.lightoj.com/volume_index.php">
+					Volume Home
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_problemset.php">
+					Problem Set
+				</a>
+			</li>
+
+
+
+			<li>
+				<a href="http://www.lightoj.com/volume_problemcategory.php">
+					Problem Category
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_problemsetters.php">
+					Problem Setters
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_submit.php">
+					Submit Problem
+				</a>
+			</li>
+			<li id="active">
+				<a id="current" href="http://www.lightoj.com/volume_usersubmissions.php">
+					My Submissions
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_submissions.php">
+					Judge Status
+				</a>
+			</li>
+			<li>
+				<a href="javascript:handleSubMenu()">
+					Ranklist
+				</a>
+			</li>
+
+			<span id="subactive" style="display: none;">
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_ranklist.php">
+						Full Ranklist
+					</a>
+				</li>
+
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_country_ranklist.php">
+						Country Ranklist
+					</a>
+				</li>
+				<!--
+				<li >
+					<a class="submenu" href="asd">
+						University Ranklist
+					</a>
+				</li>
+				!-->
+				<li>
+					<a class="submenu" href="http://www.lightoj.com/volume_ranklist.php?type=friend">
+						Friends Ranklist
+					</a>
+				</li>
+			</span>
+
+			<li>
+				<a href="http://www.lightoj.com/volume_userstat.php">
+					User Statistics
+				</a>
+			</li>
+			<li>
+				<a href="http://www.lightoj.com/volume_compare_userstat.php">
+					Compare User Statistics
+				</a>
+			</li>
+			<li class="menubottom">&nbsp;</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	function handleSubMenu( ) {
+		if( document.getElementById("subactive").style.display == "none" ) {
+			document.getElementById("subactive").style.display = "inline";
+		}
+		else {
+			document.getElementById("subactive").style.display = "none";
+		}
+	}
+</script>
+<div class="bottomDiv" align="center">
+	<table width="100%">
+		<tbody><tr>
+			<td width="50%">
+				<div class="midMessage">
+					Developed and Maintained by
+					<br><b>JANE ALAM JAN</b>
+				</div>
+
+			</td>
+			<td width="50%">
+				<div class="midMessage">
+					Copyright © 2012
+					<br><b>LightOJ, Jane Alam Jan</b>
+				</div>
+
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+	
+
+</body></html>
