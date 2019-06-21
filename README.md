@@ -1,3 +1,3 @@
 # COMPETITIVE-PROGRAMMING
 
-Solutions for Light Online Judge Problems.
+This repository contains the codes for the Light Online Judge Problems.
